@@ -57,7 +57,7 @@ body {
 
 .navbar a:hover {
     transform: scale(1.2);
-    color: rgb(126, 10, 91);
+    color: #e8e9ea);
 }
 
 .navbar a:hover::after {
