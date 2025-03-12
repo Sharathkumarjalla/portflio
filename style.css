@@ -156,6 +156,24 @@ section div ul {
 }
 
 /* Responsive Design */
+/* For screens up to 1920px */
+@media (max-width: 1920px) {
+    .content h1 {
+        font-size: 6em;
+    }
+    section {
+        padding: 200px 8%;
+    }
+    section h2 {
+        font-size: 4em;
+        margin-bottom: 80px;
+    }
+    section div {
+        font-size: 3em;
+        margin-bottom: 80px;
+    }
+}
+
 
 /* For screens up to 1024px */
 @media (max-width: 1024px) {
