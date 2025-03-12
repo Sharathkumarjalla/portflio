@@ -10,8 +10,9 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
-    color: white;
+    color: rgb(217, 218, 219);
     box-sizing: border-box;
+    background-color: black;
 }
 
 /* Background video */
@@ -63,7 +64,8 @@ body {
     content: attr(data-text);
     position: absolute;
     bottom: -30px;
-    background: rgba(0, 0, 0, 0.8);
+    font-family:'Times New Roman', Times, serif;
+   
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -79,8 +81,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
-    white-space: nowrap;
+    /* Use the new fadeInLeft animation */
+    
+    white-space: normal;  /* Allow wrapping on smaller screens */
+    width: 90%;
 }
 
 .content h1 {
@@ -88,7 +92,6 @@ body {
     font-size: 5.5em;
     text-transform: uppercase;
     margin-bottom: 20px;
-    white-space: nowrap;
 }
 
 /* Sections */
@@ -98,34 +101,42 @@ section {
     align-items: flex-end;
     padding: 180px 5%;
     min-height: auto;
+    max-width: 100%;
 }
 
 section h2 {
+    
     font-family: 'Anurati', sans-serif;
     font-size: 3.5em;
     text-transform: uppercase;
     align-self: flex-start;
-    margin-bottom: 80px;
+    margin-top: 130px;
+    margin-bottom: 50px;
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     letter-spacing: 6px;
+    animation: fadeInLeft 2s ;
 }
 
+/* Apply fade in from left to section inner content */
 section div {
     text-align: right;
     opacity: 0;
-    animation: fadeInList 2s ease-in-out forwards;
+    animation: fadeInLeft 2s ease-in-out forwards;
     font-size: 2.5em;
     line-height: 2;
     width: 100%;
     margin-bottom: 80px;
     word-wrap: break-word;
+    animation: fadeInLeft 2s ;
 }
+
 
 section div ul {
     list-style-type: disc;
     padding-right: 0;
     text-align: right;
+    animation: fadeInright 2s ;
 }
 
 /* About Section */
@@ -135,10 +146,92 @@ section div ul {
     align-items: center;
     text-align: center;
     padding: 280px 10%;
+    
 }
 
 #about h2, #about div {
     text-align: center;
     align-self: center;
+    
 }
 
+/* Responsive Design */
+
+/* For screens up to 1024px */
+@media (max-width: 1024px) {
+    .content h1 {
+        font-size: 4.5em;
+    }
+    section {
+        padding: 150px 5%;
+    }
+    section h2 {
+        font-size: 3em;
+        margin-bottom: 60px;
+    }
+    section div {
+        font-size: 2em;
+        margin-bottom: 60px;
+    }
+}
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+    .content {
+        top: 30%;
+    }
+    .content h1 {
+        font-size: 3.5em;
+    }
+    section {
+        padding: 120px 5%;
+    }
+    section h2 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+    section div {
+        font-size: 1.8em;
+        margin-bottom: 50px;
+    }
+    .navbar a {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9em;
+    }
+}
+
+/* For screens up to 480px */
+@media (max-width: 480px) {
+    .content {
+        top: 25%;
+    }
+    .content h1 {
+        font-size: 3em;
+    }
+    section {
+        padding: 80px 5%;
+    }
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    section div {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+    .navbar a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8em;
+    }
+    #about {
+        padding: 150px 5%;
+    }
+}
+
+/* Animation: Fade in from left */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
